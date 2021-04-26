@@ -1,15 +1,17 @@
 <template>
 	<div id="app">
 		<h1>ToDo List</h1>
+		<NewTask @taskAdded="addTask" />
 		<TaskGrid :tasks='tasks' />
 	</div>
 </template>
 
 <script>
+import NewTask from './components/NewTask.vue'
 import TaskGrid from './components/TaskGrid.vue'
 
 export default {
-	components: {TaskGrid},
+	components: {NewTask, TaskGrid},
 	data(){
 		return {
 			tasks:  [
@@ -19,7 +21,26 @@ export default {
 				{name: 'Buy cat food', pending: false}, 
 			]
 		}
-	}
+	},
+	methods: {
+		addTask(task){
+			const sameName = t => t.name === task.name
+			const reallyNew = this.tasks.filter(sameName).length == 0
+			if(reallyNew) {
+				this.tasks.push({
+					name: task.name,
+					pending: task.pending || true
+				})
+			}
+			/* Another way to write the if:
+			
+			reallyNew && this.tasks.push({
+					name: task.name,
+					pending: task.pending || true
+				})
+			*/
+		}
+	},
 }
 </script>
 
