@@ -14,9 +14,9 @@ export default {
 		return {
 			tasks:  [
 				{name: 'Washing dirty dishes', pending: true}, 
+				{name: 'Clean the house', pending: true}, 
 				{name: 'Buying vegetables', pending: false}, 
 				{name: 'Buy cat food', pending: false}, 
-				{name: 'Clean the house', pending: false}, 
 			]
 		}
 	}
