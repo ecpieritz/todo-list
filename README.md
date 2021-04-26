@@ -1,8 +1,9 @@
-<h1 align = "center"> :fast_forward: Todo List :rewind: </h1>
+<h1 align = "center"> :fast_forward: ToDo List :rewind: </h1>
 
 ## 🖥 Preview
 <p align = "center">
-  The preview will still be placed.
+   <img src = "https://raw.githubusercontent.com/ecpieritz/todo-list/main/public/todo-list-print.png" width = "800">
+  
 </p>
 
 ---
