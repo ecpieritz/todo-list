@@ -2,7 +2,7 @@
 	<div id="app">
 		<h1>ToDo List</h1>
 		<NewTask @taskAdded="addTask" />
-		<TaskGrid :tasks='tasks' />
+		<TaskGrid @taskDeleted="deleteTask" :tasks='tasks' />
 	</div>
 </template>
 
@@ -14,12 +14,7 @@ export default {
 	components: {NewTask, TaskGrid},
 	data(){
 		return {
-			tasks:  [
-				{name: 'Washing dirty dishes', pending: true}, 
-				{name: 'Clean the house', pending: true}, 
-				{name: 'Buying vegetables', pending: false}, 
-				{name: 'Buy cat food', pending: false}, 
-			]
+			tasks:  []
 		}
 	},
 	methods: {
@@ -33,12 +28,15 @@ export default {
 				})
 			}
 			/* Another way to write the if:
-			
+
 			reallyNew && this.tasks.push({
 					name: task.name,
 					pending: task.pending || true
 				})
 			*/
+		},
+		deleteTask(i){
+			this.tasks.splice(i, 1)
 		}
 	},
 }
