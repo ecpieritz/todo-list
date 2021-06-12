@@ -24,7 +24,7 @@
 
 ## 🚀 How to execute the project
 #### Clone the repository
-git clone https://github.com/EPieritz/todo-list.git
+git clone https://github.com/ecpieritz/todo-list.git
 
 #### Enter directory
 `cd todo-list`
